@@ -16,6 +16,14 @@ import cors from "cors";
  
  const app = express(); 
 
+ app.use(cors(
+   {
+       origin: ["https://deploy-mern-frontend.vercel.app"],
+       methods: ["POST", "GET"],
+       credentials:true
+   }
+));
+
  //middlewares
  app.use(express.urlencoded({extended:true}));
  app.use(express.json());
